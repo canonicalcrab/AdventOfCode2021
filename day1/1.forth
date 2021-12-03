@@ -1,11 +1,11 @@
 5 CONSTANT line
 CREATE buffer line 2 + allot
 
-: current-entry
+: entry
   buffer line ;
 
 : next
-  current-entry stdin read-line throw ;
+  entry stdin read-line throw ;
 
 : if-increased
   rot over < if swap 1 + else swap then ;
@@ -15,7 +15,7 @@ CREATE buffer line 2 + allot
   begin
     next while
       drop
-      current-entry s>number throw
+      entry s>number throw
       if-increased
     repeat 
   drop ;
