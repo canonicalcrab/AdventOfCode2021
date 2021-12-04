@@ -14,10 +14,9 @@ CREATE buffer line 2 + allot
   0 0
   begin
     next while
-      drop
-      entry s>number throw
+      entry drop swap s>number throw
       if-increased
     repeat 
-  drop ;
+  drop - 1 ;
 
 count . bye
